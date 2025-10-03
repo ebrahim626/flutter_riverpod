@@ -14,8 +14,6 @@ const List<Product> _allProducts = [
   Product(id: '8', title: 'Electric Guitar', price: 79, image: 'assets/products/guitar.png'),
 ];
 
-
-
 @riverpod
 List<Product> products(ref) {
   return _allProducts;
