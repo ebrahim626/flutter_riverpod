@@ -28,6 +28,13 @@ class HomeScreen extends ConsumerWidget {
             return Container(
               padding: const EdgeInsets.all(20),
               color: Colors.blueGrey.withOpacity(0.05),
+              child: Column(children: [
+                Image.asset(allProduct[index].image),
+                const SizedBox(height: 10,),
+                Text(allProduct[index].title),
+                const SizedBox(height: 10,),
+                Text('${allProduct[index].price}'),
+              ],),
             );
           },
         ),
