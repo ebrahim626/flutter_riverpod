@@ -20,34 +20,44 @@ class HomeScreen extends ConsumerWidget {
         padding: const EdgeInsets.all(20),
         child: GridView.builder(
           itemCount: allProduct.length,
-          gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 20,
             childAspectRatio: 0.9,
           ),
-          itemBuilder:(context, index) {
+          itemBuilder: (context, index) {
             return Container(
               padding: const EdgeInsets.all(20),
               color: Colors.blueGrey.withOpacity(0.05),
-              child: Column(children: [
-                Image.asset(allProduct[index].image),
-                const SizedBox(height: 10,),
-                Text(allProduct[index].title),
-                const SizedBox(height: 10,),
-                Text('${allProduct[index].price}'),
-                const SizedBox(height: 10,),
-                if(cardProduct.contains(allProduct[index]))
-                TextButton(
-                    onPressed: (){},
-                    child: const Text('Remove')
-                ),
-                if(!cardProduct.contains(allProduct[index]))
-                  TextButton(
-                      onPressed: (){},
-                      child: const Text('Add to cart')
+              child: Column(
+                children: [
+                  Image.asset(allProduct[index].image),
+                  const SizedBox(
+                    height: 10,
                   ),
-              ],),
+                  Text(allProduct[index].title),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text('${allProduct[index].price}'),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  if (cardProduct.contains(allProduct[index]))
+                    TextButton(onPressed: () {
+                    },
+                        child: const Text('Remove')),
+                  if (!cardProduct.contains(allProduct[index]))
+                    TextButton(
+                        onPressed: () {
+                          ref
+                              .read(cardNotifierProvider.notifier)
+                              .addProduct(allProduct[index]);
+                        },
+                        child: const Text('Add to cart')),
+                ],
+              ),
             );
           },
         ),

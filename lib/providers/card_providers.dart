@@ -12,6 +12,14 @@ class CardNotifier extends Notifier<Set<Product>> {
           image: 'assets/products/backpack.png'),
     };
   }
+
+  void addProduct(Product product) {
+    if(!state.contains(product)) {
+      state = {...state, product};
+    }
+
+  }
+
 }
 
 final cardNotifierProvider = NotifierProvider<CardNotifier, Set<Product>>(
