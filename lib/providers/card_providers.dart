@@ -17,7 +17,12 @@ class CardNotifier extends Notifier<Set<Product>> {
     if(!state.contains(product)) {
       state = {...state, product};
     }
+  }
 
+  void removeProduct(Product product) {
+    if(state.contains(product)) {
+      state = state.where((p) => p.id != product.id).toSet();
+    }
   }
 
 }
