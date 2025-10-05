@@ -23,3 +23,7 @@ List<Product> products(ref) {
 List<Product> reducedProduct(ref) {
   return _allProducts.where((p) => p.price <  50).toList();
 }
+
+// final productsProvider = Provider<List<Product>>((ref) {
+//   return _allProducts;
+// });

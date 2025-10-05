@@ -4,13 +4,7 @@ import 'package:riverpod_files/models/product.dart';
 class CardNotifier extends Notifier<Set<Product>> {
   @override
   Set<Product> build() {
-    return const {
-      Product(
-          id: '4',
-          title: 'Red Backpack',
-          price: 14,
-          image: 'assets/products/backpack.png'),
-    };
+    return const {};
   }
 
   void addProduct(Product product) {
@@ -32,3 +26,12 @@ final cardNotifierProvider = NotifierProvider<CardNotifier, Set<Product>>(
     return CardNotifier();
   },
 );
+
+final totalCartProvider = Provider<int>((ref){
+    final totalCartProduct = ref.watch(cardNotifierProvider);
+    int total = 0;
+    for (Product product in totalCartProduct){
+     total += product.price;
+    }
+    return total;
+  });

@@ -38,7 +38,7 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                   );
                 }).toList(), // output cart products here
             ),
-
+            Text('data')
             // output totals here
           ],
         ),
