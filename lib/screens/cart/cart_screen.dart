@@ -31,8 +31,10 @@ class _CartScreenState extends ConsumerState<CartScreen> {
                 cardProducts.map((product) {
                   return Container(
                     padding: const EdgeInsetsGeometry.symmetric(vertical: 10),
-                    child: Row(children: [
-                      Image.asset(product.image),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                      Image.asset(product.image, width: 60,),
                       Text(product.title),
                       Text(product.price.toString())
                     ],),

@@ -30,6 +30,7 @@ class CartIcon extends ConsumerWidget {
               borderRadius: BorderRadius.circular(10),
               color: Colors.blueAccent,
             ),
+            child: Text('$totalCartItem',style: const TextStyle(color: Colors.white),),
           ),
         ),
       ],

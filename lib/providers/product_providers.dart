@@ -5,7 +5,7 @@ part 'product_providers.g.dart';
 
 const List<Product> _allProducts = [
   Product(id: '1', title: 'Groovy Shorts', price: 12, image: 'assets/products/shorts.png'),
-  Product(id: '2', title: 'Karati Kit', price: 34, image: 'assets/ products/karati.png'),
+  Product(id: '2', title: 'Karati Kit', price: 34, image: 'assets/products/karati.png'),
   Product(id: '3', title: 'Denim Jeans', price: 54, image: 'assets/products/jeans.png'),
   Product(id: '4', title: 'Red Backpack', price: 14, image: 'assets/products/backpack.png'),
   Product(id: '5', title: 'Drum & Sticks', price: 29, image: 'assets/products/drum.png'),

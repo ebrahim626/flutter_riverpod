@@ -32,7 +32,7 @@ class HomeScreen extends ConsumerWidget {
               color: Colors.blueGrey.withOpacity(0.05),
               child: Column(
                 children: [
-                  Image.asset(allProduct[index].image),
+                  Expanded(child: Image.asset(allProduct[index].image)),
                   const SizedBox(
                     height: 10,
                   ),
