@@ -8,6 +8,7 @@ class CartIcon extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final totalCartItem = ref.watch(cardNotifierProvider).length;
     return Stack(
       children: [
         IconButton(
